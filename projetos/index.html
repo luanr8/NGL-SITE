@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LNG - Soluções Digitais</title>
+    <meta name="description" content="Desenvolvimento de sites e aplicativos profissionais, personalizados e modernos. LNG Soluções Digitais: destaque sua empresa na internet!">
+    <link rel="icon" type="image/webp" href="imagens/IMG-20250621-WA00012.webp">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegação principal">
+            <ul style="display:flex;justify-content:center;gap:32px;list-style:none;padding:0;margin:0 0 18px 0;">
+                <li><a href="#apresentacao" style="color:#f3f6fa;text-decoration:none;font-weight:700;">Início</a></li>
+                <li><a href="#planos" style="color:#f3f6fa;text-decoration:none;font-weight:700;">Planos</a></li>
+                <li><a href="#sobre" style="color:#f3f6fa;text-decoration:none;font-weight:700;">Quem Somos</a></li>
+                <li><a href="#contato" style="color:#f3f6fa;text-decoration:none;font-weight:700;">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="apresentacao" id="apresentacao">
+            <h1>Bem-vindo à LNG!</h1>
+            <p>Soluções digitais para o seu negócio! Desenvolvemos <strong>sites profissionais</strong> e <strong>aplicativos personalizados</strong> com design moderno, responsivo e focado em resultados.<br>
+            Transforme sua ideia em realidade com uma equipe especializada em tecnologia e inovação.</p>
+        </div>
+    </header>
+
+    <main>
+        <button id="open-auth-modal" class="auth-float-btn" aria-label="Entrar ou Registrar">Entrar</button>
+        <div id="auth-modal" class="auth-modal-bg" style="display:none;">
+            <section id="auth" class="auth-section auth-modal-content" style="max-width:400px;margin:0 auto;">
+                <span id="close-auth-modal" class="close-auth-modal" aria-label="Fechar">&times;</span>
+                <div id="auth-tabs" style="display:flex;gap:8px;justify-content:center;margin-bottom:18px;">
+                    <button id="show-login" type="button" class="auth-tab active">Login</button>
+                    <button id="show-register" type="button" class="auth-tab">Registrar</button>
+                </div>
+                <form id="login-form" autocomplete="on">
+                    <h2 style="text-align:center;">Login</h2>
+                    <label for="login-user">Telefone, E-mail ou Nome</label>
+                    <input type="text" id="login-user" name="login-user" required placeholder="Digite seu telefone, e-mail ou nome">
+                    <label for="login-password">Senha</label>
+                    <input type="password" id="login-password" name="login-password" required placeholder="Digite sua senha">
+                    <button type="submit" class="auth-btn">Entrar</button>
+                </form>
+                <form id="register-form" style="display:none;" autocomplete="on">
+                    <h2 style="text-align:center;">Registrar</h2>
+                    <label for="reg-nome">Nome</label>
+                    <input type="text" id="reg-nome" name="reg-nome" required placeholder="Seu nome">
+                    <label for="reg-sobrenome">Sobrenome</label>
+                    <input type="text" id="reg-sobrenome" name="reg-sobrenome" required placeholder="Seu sobrenome">
+                    <label for="reg-telefone">Telefone</label>
+                    <input type="tel" id="reg-telefone" name="reg-telefone" required placeholder="(xx) xxxxx-xxxx">
+                    <label for="reg-email">E-mail</label>
+                    <input type="email" id="reg-email" name="reg-email" placeholder="Opcional">
+                    <label for="reg-senha">Senha</label>
+                    <input type="password" id="reg-senha" name="reg-senha" required placeholder="Crie uma senha">
+                    <label for="reg-confirmar">Confirmar Senha</label>
+                    <input type="password" id="reg-confirmar" name="reg-confirmar" required placeholder="Repita a senha">
+                    <button type="submit" class="auth-btn">Registrar</button>
+                </form>
+                <div id="auth-msg" style="margin-top:12px;text-align:center;"></div>
+            </section>
+        </div>
+
+        <div id="cliente-dashboard" style="display:none;max-width:420px;margin:32px auto 0 auto;padding:18px 16px 14px 16px;background:rgba(30,40,60,0.85);border-radius:14px;box-shadow:0 2px 16px #0002;backdrop-filter:blur(4px);">
+            <h3 style="color:#7fbcff;text-align:center;margin-bottom:10px;font-weight:800;">Área do Cliente</h3>
+            <div id="cliente-info" style="color:#f3f6fa;font-size:1.05em;margin-bottom:10px;text-align:center;"></div>
+            <div style="display:flex;justify-content:center;gap:12px;">
+                <button id="btn-sair-dashboard" style="background:#f55;color:#fff;border:none;border-radius:6px;padding:6px 16px;font-weight:600;cursor:pointer;">Sair</button>
+                <button id="btn-suporte-dashboard" style="background:#7fbcff;color:#1a2333;border:none;border-radius:6px;padding:6px 16px;font-weight:600;cursor:pointer;">Suporte</button>
+            </div>
+            <div style="margin-top:16px;text-align:center;font-size:0.98em;color:#b6d6ff;">Histórico de pedidos e status em breve!</div>
+        </div>
+
+        <section id="planos">
+            <h2 style="text-align:center;margin-bottom:32px;">Nossos Planos</h2>
+            <div class="planos compact">
+                <div class="plan">
+                    <h3><span aria-hidden="true">📄</span> Landing Page</h3>
+                    <ul>
+                        <li>1 página</li>
+                        <li>Design responsivo</li>
+                        <li>Entrega rápida</li>
+                    </ul>
+                    <p class="price">R$ 399,00</p>
+                    <button>Assinar</button>
+                </div>
+                <div class="plan">
+                    <h3><span aria-hidden="true">💻</span> Site Básico</h3>
+                    <ul>
+                        <li>Até 3 páginas</li>
+                        <li>Design moderno</li>
+                        <li>Suporte por e-mail</li>
+                    </ul>
+                    <p class="price">R$ 699,00</p>
+                    <button>Assinar</button>
+                </div>
+                <div class="plan">
+                    <h3><span aria-hidden="true">🚀</span> Profissional</h3>
+                    <ul>
+                        <li>Até 7 páginas</li>
+                        <li>Design personalizado</li>
+                        <li>Formulário de contato</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <p class="price">R$ 1.199,00</p>
+                    <button>Assinar</button>
+                </div>
+                <div class="plan">
+                    <h3><span aria-hidden="true">🏢</span> Empresarial</h3>
+                    <ul>
+                        <li>Páginas ilimitadas</li>
+                        <li>Design exclusivo</li>
+                        <li>Integrações avançadas</li>
+                        <li>Suporte 24/7</li>
+                    </ul>
+                    <p class="price">R$ 1.899,00</p>
+                    <button>Assinar</button>
+                </div>
+                <div class="plan">
+                    <h3><span aria-hidden="true">🛒</span> Loja Virtual</h3>
+                    <ul>
+                        <li>Catálogo de produtos</li>
+                        <li>Pagamentos online</li>
+                        <li>Gestão de pedidos</li>
+                        <li>Suporte dedicado</li>
+                    </ul>
+                    <p class="price">R$ 2.499,00</p>
+                    <button>Assinar</button>
+                </div>
+                <div class="plan">
+                    <h3><span aria-hidden="true">✨</span> Personalizado</h3>
+                    <ul>
+                        <li>Projeto sob medida</li>
+                        <li>Consultoria técnica</li>
+                        <li>Funcionalidades exclusivas</li>
+                    </ul>
+                    <p class="price">Sob consulta</p>
+                    <button>Solicitar Orçamento</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Botão flutuante Solicitar Projeto -->
+        <button id="solicitar-projeto-btn" class="solicitar-projeto-float-btn" aria-label="Solicitar Projeto">Solicitar Projeto</button>
+        <!-- Modal de Orçamento Detalhado -->
+        <div id="orcamento-modal" class="orcamento-modal-bg" style="display:none;">
+            <section id="orcamento" class="orcamento-modal-content" style="max-width:600px;margin:0 auto;padding:28px 18px 18px 18px;background:rgba(30,40,60,0.85);border-radius:16px;box-shadow:0 2px 16px #0002;backdrop-filter:blur(4px);position:relative;">
+                <span id="close-orcamento-modal" class="close-orcamento-modal" aria-label="Fechar" style="position:absolute;top:12px;right:18px;font-size:2em;cursor:pointer;color:#7fbcff;">&times;</span>
+                <h2 style="text-align:center;margin-bottom:18px;color:#7fbcff;">Solicite seu Orçamento</h2>
+                <form id="form-orcamento" style="display:flex;flex-direction:column;gap:12px;">
+                    <div style="display:flex;gap:10px;flex-wrap:wrap;">
+                        <input type="text" name="nome" placeholder="Seu nome*" required style="flex:1;min-width:120px;">
+                        <input type="tel" name="telefone" placeholder="Telefone*" required style="flex:1;min-width:120px;">
+                    </div>
+                    <input type="email" name="email" placeholder="E-mail (opcional)">
+                    <select name="tipo" id="tipo-projeto" required>
+                        <option value="">Tipo de projeto*</option>
+                        <option value="site">Site institucional</option>
+                        <option value="loja">Loja virtual</option>
+                        <option value="landing">Landing page</option>
+                        <option value="outro">Outro</option>
+                    </select>
+                    <div id="extras-orcamento" style="display:none;flex-direction:column;gap:8px;"></div>
+                    <textarea name="detalhes" placeholder="Descreva o que você precisa*" required style="min-height:60px;"></textarea>
+                    <button type="submit" class="auth-btn" style="margin-top:8px;">Enviar Orçamento</button>
+                </form>
+                <div id="orcamento-msg" style="margin-top:10px;text-align:center;"></div>
+            </section>
+        </div>
+
+        <section class="depoimentos" id="depoimentos">
+            <h2 style="text-align:center;margin-bottom:24px;">O que dizem nossos clientes</h2>
+            <div class="depoimentos-slider-container">
+                <button class="depoimentos-arrow left" aria-label="Anterior">&#10094;</button>
+                <div class="depoimentos-slider">
+                    <div class="depoimento-slide active">
+                        <blockquote>
+                            <p>“A LNG criou meu site do zero, ficou incrível e aumentou muito meus contatos!”</p>
+                            <footer>— Ana Paula, Empresária</footer>
+                        </blockquote>
+                    </div>
+                    <div class="depoimento-slide">
+                        <blockquote>
+                            <p>“O app ficou rápido, bonito e fácil de usar. Recomendo demais!”</p>
+                            <footer>— João Silva, Autônomo</footer>
+                        </blockquote>
+                    </div>
+                    <div class="depoimento-slide">
+                        <blockquote>
+                            <p>“Atendimento excelente, entregaram antes do prazo e com muita qualidade.”</p>
+                            <footer>— Carla Mendes, Loja Virtual</footer>
+                        </blockquote>
+                    </div>
+                </div>
+                <button class="depoimentos-arrow right" aria-label="Próximo">&#10095;</button>
+            </div>
+            <div class="depoimentos-indicadores"></div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <h2>Quem Somos</h2>
+            <p>Somos a LNG, uma equipe apaixonada por tecnologia e inovação. Atuamos no desenvolvimento de <strong>sites</strong> e <strong>aplicativos</strong> personalizados, ajudando empresas e profissionais a conquistarem presença digital de destaque.</p>
+            <h2>O que Fazemos</h2>
+            <p>Criamos soluções digitais sob medida, desde sites institucionais até aplicativos completos. Nosso foco é entregar projetos modernos, responsivos e que realmente geram resultados para o seu negócio. Conte com a LNG para transformar sua ideia em realidade!</p>
+        </section>
+
+        <button id="faq-toggle-btn" style="display:block;margin:48px auto 0 auto;padding:10px 28px;background:#7fbcff;color:#1a2333;font-weight:700;font-size:1.08em;border:none;border-radius:8px;box-shadow:0 2px 8px #7fbcff22;cursor:pointer;transition:filter .2s;">Perguntas Frequentes (FAQ)</button>
+        <section id="faq" style="max-width:600px;margin:18px auto 0 auto;padding:0;display:none;">
+            <div class="faq-lista">
+                <details style="margin-bottom:10px;background:rgba(30,40,60,0.7);border-radius:8px;padding:10px 14px;">
+                    <summary style="color:#7fbcff;font-weight:600;cursor:pointer;">Como funciona o processo de criação do site?</summary>
+                    <div style="color:#f3f6fa;font-size:0.98em;margin-top:6px;">Após o contato, entendemos sua necessidade, enviamos uma proposta, desenvolvemos o projeto e só finalizamos quando você estiver satisfeito!</div>
+                </details>
+                <details style="margin-bottom:10px;background:rgba(30,40,60,0.7);border-radius:8px;padding:10px 14px;">
+                    <summary style="color:#7fbcff;font-weight:600;cursor:pointer;">Quais formas de pagamento são aceitas?</summary>
+                    <div style="color:#f3f6fa;font-size:0.98em;margin-top:6px;">Pix, boleto, cartão de crédito e parcelamento sob consulta.</div>
+                </details>
+                <details style="margin-bottom:10px;background:rgba(30,40,60,0.7);border-radius:8px;padding:10px 14px;">
+                    <summary style="color:#7fbcff;font-weight:600;cursor:pointer;">Meu site vai aparecer no Google?</summary>
+                    <div style="color:#f3f6fa;font-size:0.98em;margin-top:6px;">Sim! Todos os sites são otimizados para SEO básico e indexação no Google.</div>
+                </details>
+                <details style="margin-bottom:10px;background:rgba(30,40,60,0.7);border-radius:8px;padding:10px 14px;">
+                    <summary style="color:#7fbcff;font-weight:600;cursor:pointer;">Posso pedir alterações após a entrega?</summary>
+                    <div style="color:#f3f6fa;font-size:0.98em;margin-top:6px;">Sim, você pode solicitar ajustes dentro do período de suporte incluso no seu plano.</div>
+                </details>
+                <details style="background:rgba(30,40,60,0.7);border-radius:8px;padding:10px 14px;">
+                    <summary style="color:#7fbcff;font-weight:600;cursor:pointer;">Vocês desenvolvem aplicativos também?</summary>
+                    <div style="color:#f3f6fa;font-size:0.98em;margin-top:6px;">No momento, não desenvolvemos aplicativos, apenas sites.</div>
+                </details>
+            </div>
+        </section>
+
+        <section id="contato" style="max-width:600px;margin:48px auto 0 auto;text-align:center;">
+            <h2>Contato</h2>
+            <p>Entre em contato para um orçamento ou para tirar dúvidas:</p>
+            <a href="mailto:contato@lgn.com" style="color:#7fbcff;font-weight:700;font-size:1.1em;text-decoration:none;">contato@lgn.com</a>
+        </section>
+    </main>
+
+    <!-- Botão flutuante WhatsApp -->
+    <div id="whatsapp-float-btn" class="whatsapp-float-btn" tabindex="0" aria-label="Abrir chat do WhatsApp">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:32px;height:32px;">
+    </div>
+    <!-- Popup WhatsApp -->
+    <div id="whatsapp-popup" class="whatsapp-popup" style="display:none;">
+        <div class="wa-popup-header">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp" style="width:26px;height:26px;vertical-align:middle;">
+            <span style="font-weight:700;font-size:1.08em;margin-left:6px;">WhatsApp</span>
+            <button id="wa-popup-close" class="wa-popup-close" aria-label="Fechar">&times;</button>
+        </div>
+        <div class="wa-popup-body">
+            <div class="wa-popup-msg">
+                <span>Olá <span aria-label="aceno">👋</span><br>Em que podemos te ajudar?</span>
+            </div>
+            <div class="wa-popup-privacidade">
+                <input type="checkbox" id="wa-consent" style="accent-color:#7fbcff;">
+                <label for="wa-consent" style="font-size:0.97em;">Ao continuar você concorda com nossa <a href="#" style="color:#7fbcff;text-decoration:underline;">política de privacidade</a>.</label>
+            </div>
+            <button id="wa-popup-send" class="wa-popup-send" disabled> <span style="font-weight:700;">Abrir WhatsApp</span> <svg style="margin-left:8px;vertical-align:middle;" width="22" height="22" fill="none" stroke="#1a2333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12l8-8 8 8M12 4v16"/></svg></button>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 LNG Soluções Digitais. Todos os direitos reservados.
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

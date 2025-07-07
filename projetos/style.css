@@ -1,0 +1,844 @@
+body {
+    font-family: 'Montserrat', 'Segoe UI', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(120deg, #181c2f 0%, #232946 100%);
+    color: #f3f6fa;
+    min-height: 100vh;
+    letter-spacing: 0.02em;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+}
+
+header, .apresentacao {
+    background: linear-gradient(90deg, #232946 60%, #1a1f36 100%);
+    color: #f3f6fa;
+    padding: 48px 0 32px 0;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    border-bottom: 1px solid #2a2e47;
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 14px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 2px 8px #181c2f80;
+}
+
+header p {
+    font-size: 1.25em;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #b8c1ec;
+}
+
+.logo-site {
+    display: block;
+    margin: 0 auto 18px auto;
+    max-width: 90px;
+    max-height: 90px;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #0005;
+    background: #181c2f;
+    object-fit: contain;
+}
+
+.planos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* aumenta um pouco o espaçamento */
+    margin: 48px 0 32px 0;
+}
+
+.plan {
+    background: rgba(44, 50, 80, 0.97); /* cor mais clara e destacada que o fundo */
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    padding: 38px 40px;
+    width: 340px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
+    border: 2px solid #232946;
+    backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+    margin: 0 12px; /* desgruda um pouco as boxes */
+}
+
+.plan::before {
+    content: '';
+    position: absolute;
+    top: -40px; left: -40px;
+    width: 120px; height: 120px;
+    background: linear-gradient(135deg, #0077ff55 0%, #b8c1ec22 100%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.plan:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 12px 40px #0077ff33;
+    border-color: #0077ff;
+}
+
+.plan h3 {
+    color: #7fbcff;
+    margin-bottom: 12px;
+    font-size: 1.5em;
+    z-index: 1;
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: left;
+    width: 100%;
+    z-index: 1;
+}
+
+.plan ul li {
+    margin-bottom: 12px;
+    padding-left: 26px;
+    position: relative;
+    font-size: 1.08em;
+    color: #eebbc3;
+}
+
+.plan ul li::before {
+    content: "★";
+    color: #f9bc60;
+    position: absolute;
+    left: 0;
+    font-size: 1em;
+}
+
+.plan .price {
+    font-size: 1.6em;
+    color: #f9bc60;
+    margin: 18px 0 0 0;
+    font-weight: 700;
+    z-index: 1;
+}
+
+.plan button {
+    background: linear-gradient(90deg, #0077ff 60%, #232946 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 36px;
+    margin-top: 22px;
+    cursor: pointer;
+    font-size: 1.15em;
+    font-weight: 700;
+    box-shadow: 0 2px 12px #0077ff33;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    z-index: 1;
+    letter-spacing: 0.04em;
+}
+
+.plan button:hover {
+    background: linear-gradient(90deg, #f9bc60 60%, #0077ff 100%);
+    color: #232946;
+    transform: scale(1.07);
+    box-shadow: 0 4px 24px #f9bc6044;
+}
+
+.sobre {
+    background: rgba(36, 41, 61, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    margin: 56px auto 36px auto;
+    max-width: 900px;
+    padding: 48px 36px;
+    text-align: center;
+    border: 1.5px solid #232946;
+    backdrop-filter: blur(6px);
+}
+
+.sobre h2 {
+    color: #f9bc60;
+    margin-bottom: 18px;
+    font-size: 1.6em;
+}
+
+.sobre p {
+    font-size: 1.13em;
+    margin-bottom: 22px;
+    color: #b8c1ec;
+}
+
+.depoimentos {
+    background: rgba(36, 41, 61, 0.92);
+    border-radius: 18px;
+    box-shadow: 0 2px 24px rgba(0,0,0,0.18);
+    margin: 56px auto 36px auto;
+    max-width: 900px;
+    padding: 48px 36px;
+    text-align: center;
+    border: 1.5px solid #232946;
+    backdrop-filter: blur(6px);
+}
+
+.depoimentos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.depoimentos-lista blockquote {
+    background: #232946cc;
+    color: #b8c1ec;
+    border-left: 4px solid #7fbcff;
+    border-radius: 12px;
+    padding: 24px 20px 16px 24px;
+    max-width: 320px;
+    min-width: 220px;
+    font-style: italic;
+    box-shadow: 0 2px 12px #0003;
+    margin: 0;
+    position: relative;
+}
+
+.depoimentos-lista blockquote footer {
+    color: #f9bc60;
+    font-size: 0.98em;
+    margin-top: 12px;
+    font-style: normal;
+}
+
+/* --- WhatsApp Popup e Botão Flutuante --- */
+.whatsapp-float-btn {
+    background: #25d366;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #25d36644;
+    padding: 8px;
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: filter .2s;
+}
+.whatsapp-float-btn:hover, .whatsapp-float-btn:focus {
+    filter: brightness(1.1);
+    outline: 2px solid #7fbcff;
+}
+.whatsapp-popup {
+    position: fixed;
+    bottom: 80px;
+    right: 22px;
+    width: 340px;
+    background: #181e28;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px #0008;
+    z-index: 130;
+    font-family: 'Montserrat', Arial, sans-serif;
+    animation: waPopupIn .25s cubic-bezier(.4,0,.2,1);
+}
+@keyframes waPopupIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+.wa-popup-header {
+    background: #25d366;
+    border-radius: 18px 18px 0 0;
+    padding: 12px 16px 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wa-popup-header span {
+    color: #1a2333;
+    font-weight: 800;
+}
+.wa-popup-close {
+    background: none;
+    border: none;
+    color: #1a2333;
+    font-size: 1.5em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color .2s;
+}
+.wa-popup-close:hover {
+    color: #7fbcff;
+}
+.wa-popup-body {
+    padding: 18px 18px 16px 18px;
+    background: #181e28;
+    border-radius: 0 0 18px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.wa-popup-msg {
+    background: #444a55;
+    color: #f3f6fa;
+    border-radius: 12px;
+    padding: 12px 16px 10px 16px;
+    font-size: 1.08em;
+    margin-bottom: 2px;
+    box-shadow: 0 1px 6px #0002;
+    width: fit-content;
+    max-width: 90%;
+}
+.wa-popup-privacidade {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 0.97em;
+    color: #f3f6fa;
+}
+.wa-popup-privacidade a {
+    color: #7fbcff;
+    text-decoration: underline;
+}
+.wa-popup-send {
+    background: #7fbcff;
+    color: #1a2333;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 0;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.08em;
+    margin-top: 8px;
+    box-shadow: 0 2px 8px #7fbcff22;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: filter .2s;
+}
+.wa-popup-send:disabled {
+    background: #b6d6ff;
+    color: #1a2333aa;
+    cursor: not-allowed;
+    filter: grayscale(0.2);
+}
+.wa-popup-send:hover:not(:disabled) {
+    filter: brightness(1.1);
+}
+@media (max-width: 500px) {
+    .whatsapp-popup { width: 98vw; right: 1vw; }
+}
+
+/* Estilos para a seção de login/registro */
+.auth-section {
+    background: rgba(44, 50, 80, 0.97);
+    border-radius: 18px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+    padding: 32px 24px 24px 24px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+.auth-section h2 {
+    color: #7fbcff;
+    margin-bottom: 18px;
+    font-size: 1.3em;
+}
+.auth-section label {
+    display: block;
+    margin-bottom: 4px;
+    margin-top: 12px;
+    color: #b8c1ec;
+    font-size: 1em;
+}
+.auth-section input {
+    width: 100%;
+    padding: 10px 8px;
+    border-radius: 6px;
+    border: 1.5px solid #232946;
+    background: #232946;
+    color: #f3f6fa;
+    margin-bottom: 6px;
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s;
+}
+.auth-section input:focus {
+    border: 1.5px solid #7fbcff;
+}
+.auth-btn {
+    width: 100%;
+    background: linear-gradient(90deg, #0077ff 60%, #232946 100%);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    margin-top: 16px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700;
+    box-shadow: 0 2px 8px #0077ff33;
+    transition: background 0.2s, transform 0.2s;
+}
+.auth-btn:hover {
+    background: linear-gradient(90deg, #f9bc60 60%, #0077ff 100%);
+    color: #232946;
+    transform: scale(1.03);
+}
+.auth-tab {
+    background: #232946;
+    color: #b8c1ec;
+    border: none;
+    border-radius: 6px 6px 0 0;
+    padding: 8px 24px;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+}
+.auth-tab.active, .auth-tab:hover {
+    background: #7fbcff;
+    color: #232946;
+}
+
+/* Estilos para o botão flutuante de login/registro */
+.auth-float-btn {
+    position: fixed;
+    top: 28px;
+    right: 32px;
+    z-index: 1200;
+    background: #7fbcff;
+    color: #232946;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-size: 1.1em;
+    font-weight: 700;
+    box-shadow: 0 2px 12px #0077ff33;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.auth-float-btn:hover {
+    background: #232946;
+    color: #7fbcff;
+    transform: scale(1.05);
+}
+
+/* Estilos para o modal centralizado */
+.auth-modal-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(24,28,47,0.85);
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.auth-modal-content {
+    position: relative;
+    box-shadow: 0 8px 32px #0008;
+    animation: slideDown 0.4s;
+    max-height: 90vh;
+    width: 100%;
+    max-width: 380px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #232946 #232946;
+}
+
+.auth-modal-content::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+.auth-modal-content::-webkit-scrollbar-thumb {
+    background: #232946;
+    border-radius: 8px;
+}
+.auth-modal-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+@media (max-width: 500px) {
+    .auth-modal-content {
+        max-width: 98vw;
+        padding: 8px 2px;
+    }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-60px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.close-auth-modal {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 2em;
+    color: #b8c1ec;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.2s;
+}
+.close-auth-modal:hover {
+    color: #f55;
+}
+
+/* Remove a seção auth antiga do fluxo normal */
+.auth-section:not(.auth-modal-content) {
+    display: none !important;
+}
+
+/* --- Carrossel de Depoimentos --- */
+.depoimentos-slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+    max-width: 420px;
+    margin: 0 auto 18px auto;
+}
+.depoimentos-slider {
+    display: flex;
+    overflow: hidden;
+    width: 320px;
+    min-height: 120px;
+    position: relative;
+}
+.depoimento-slide {
+    min-width: 100%;
+    opacity: 0;
+    transition: opacity .5s, transform .5s;
+    position: absolute;
+    left: 0; top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+.depoimento-slide.active {
+    opacity: 1;
+    position: relative;
+    pointer-events: auto;
+    transform: scale(1.02);
+    z-index: 2;
+}
+.depoimentos-arrow {
+    background: #232c3d;
+    color: #7fbcff;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 1.5em;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #7fbcff22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .2s, color .2s;
+    margin: 0 8px;
+}
+.depoimentos-arrow:hover {
+    background: #7fbcff;
+    color: #1a2333;
+}
+.depoimentos-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.depoimentos-indicadores button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #7fbcff55;
+    cursor: pointer;
+    transition: background .2s;
+}
+.depoimentos-indicadores button.active {
+    background: #7fbcff;
+}
+@media (max-width: 500px) {
+    .depoimentos-slider { width: 98vw; }
+}
+
+/* --- Formulário de Orçamento Detalhado --- */
+#orcamento {
+    background: rgba(30,40,60,0.85);
+    border-radius: 16px;
+    box-shadow: 0 2px 16px #0002;
+    margin-bottom: 32px;
+}
+#orcamento h2 {
+    color: #7fbcff;
+    font-weight: 800;
+    margin-bottom: 18px;
+}
+#form-orcamento input, #form-orcamento select, #form-orcamento textarea {
+    background: #232c3d;
+    color: #f3f6fa;
+    border: 1.5px solid #7fbcff55;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1em;
+    margin-bottom: 0;
+    outline: none;
+    transition: border .2s;
+}
+#form-orcamento input:focus, #form-orcamento select:focus, #form-orcamento textarea:focus {
+    border: 1.5px solid #7fbcff;
+}
+#form-orcamento button {
+    background: #7fbcff;
+    color: #1a2333;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-weight: 700;
+    font-size: 1.08em;
+    box-shadow: 0 2px 8px #7fbcff22;
+    cursor: pointer;
+    transition: filter .2s;
+}
+#form-orcamento button:hover {
+    filter: brightness(1.1);
+}
+#orcamento-msg {
+    font-size: 1.05em;
+    color: #7fbcff;
+    margin-top: 8px;
+}
+@media (max-width: 600px) {
+    #orcamento { padding: 12px 2vw; }
+    #form-orcamento input, #form-orcamento select, #form-orcamento textarea { font-size: 0.98em; }
+}
+
+/* --- Modal de Orçamento Detalhado --- */
+.orcamento-float-btn {
+    background: #7fbcff;
+    color: #1a2333;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    font-weight: 700;
+    font-size: 1.08em;
+    position: fixed;
+    bottom: 80px;
+    right: 22px;
+    z-index: 120;
+    box-shadow: 0 2px 8px #7fbcff22;
+    cursor: pointer;
+    transition: filter .2s;
+}
+.orcamento-float-btn:hover {
+    filter: brightness(1.1);
+}
+.orcamento-modal-bg {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(20,30,40,0.75);
+    z-index: 1300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.2s;
+}
+.orcamento-modal-content {
+    animation: modalIn 0.25s cubic-bezier(.4,1.6,.6,1) 1;
+}
+@keyframes modalIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.98); }
+    to { opacity: 1; transform: none; }
+}
+.close-orcamento-modal {
+    font-size: 2em;
+    color: #7fbcff;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.close-orcamento-modal:hover {
+    color: #fff;
+}
+@media (max-width: 600px) {
+    .orcamento-modal-content {
+        max-width: 98vw !important;
+        padding: 18px 4vw 12px 4vw !important;
+    }
+    .solicitar-projeto-float-btn {
+        right: 12px;
+        bottom: 12px;
+        padding: 12px 18px;
+        font-size: 1em;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+    .planos {
+        flex-direction: column;
+        align-items: center;
+        gap: 28px;
+    }
+    .plan {
+        width: 95%;
+        max-width: 420px;
+    }
+    .sobre {
+        padding: 28px 8px;
+    }
+}
+
+@media (max-width: 900px) {
+    .depoimentos-lista {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header, .apresentacao {
+        padding: 18px 0 10px 0;
+    }
+    .plan {
+        padding: 14px 4px;
+    }
+    .sobre {
+        padding: 10px 2px;
+    }
+    .depoimentos {
+        padding: 28px 16px;
+    }
+    h1 {
+        font-size: 1.3em;
+    }
+    h2 {
+        font-size: 1em;
+    }
+}
+
+.solicitar-projeto-float-btn {
+  position: fixed;
+  bottom: 100px; /* Aumenta distância do WhatsApp */
+  right: 32px;
+  z-index: 1200;
+  background: linear-gradient(90deg, #7fbcff 60%, #1a2333 100%);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 32px;
+  font-size: 1.1em;
+  font-weight: 600;
+  box-shadow: 0 4px 24px #0003;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.solicitar-projeto-float-btn:hover {
+  background: linear-gradient(90deg, #1a2333 20%, #7fbcff 100%);
+  box-shadow: 0 6px 32px #0005;
+  transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+  .solicitar-projeto-float-btn {
+    right: 12px;
+    bottom: 76px; /* Também aumenta no mobile */
+    padding: 12px 18px;
+    font-size: 1em;
+  }
+}
+
+.planos.compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  justify-content: center;
+}
+.planos.compact .plan {
+  background: rgba(30,40,60,0.85);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px #0002;
+  padding: 18px 16px 14px 16px;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.planos.compact .plan:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px #7fbcff33;
+}
+.planos.compact .plan h3 {
+  font-size: 1.13em;
+  margin-bottom: 8px;
+  color: #7fbcff;
+  font-weight: 800;
+  text-align: center;
+}
+.planos.compact .plan ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px 0;
+  color: #f3f6fa;
+  font-size: 0.98em;
+  text-align: left;
+}
+.planos.compact .plan ul li {
+  margin-bottom: 2px;
+}
+.planos.compact .plan .price {
+  color: #fff;
+  font-size: 1.18em;
+  font-weight: 700;
+  margin: 8px 0 10px 0;
+}
+.planos.compact .plan button {
+  background: #7fbcff;
+  color: #1a2333;
+  border: none;
+  border-radius: 8px;
+  padding: 7px 22px;
+  font-weight: 700;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  margin-top: auto;
+}
+.planos.compact .plan button:hover {
+  background: #1a2333;
+  color: #7fbcff;
+}
+@media (max-width: 900px) {
+  .planos.compact {
+    flex-direction: column;
+    align-items: center;
+  }
+  .planos.compact .plan {
+    max-width: 98vw;
+    min-width: 0;
+    width: 100%;
+  }
+}
